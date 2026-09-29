@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Lab03: Currency Converter</title>
+
+<style>
+ @import url('https://fonts.googleapis.com/css2?family=Bitcount:wght@100..900&display=swap');
+    body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+        background-color: #f7f6f6;
+    }
+
+    h1 {
+        color: #333;
+        font-family: "Bitcount", system-ui;
+  font-optical-sizing: auto;
+    }
+
+    input, select, button {
+        padding: 10px;
+        margin: 5px;
+        font-size: 16px;
+    }
+
+    button {
+        background-color: #00A7E1;
+        color: white;
+        border: none;
+        cursor: pointer;
+        border-radius: 5px;
+    }
+
+    button:hover {
+        background-color: #0474BA;
+    }
+</style>
+
+</head>
+<body>
+
+<h1>Currency Converter</h1>
+<img src="cat_img.png" alt="Cat Image" width="100" height="100"><br>
+<input id="amount" type="number" placeholder="Enter amount...">
+
+<select id="fromCurrency" >
+  <option value="EUR">EUR</option>
+  <option value="USD">USD</option>
+  <option value="UAH">UAH</option>
+  <option value="JPY">JPY</option>
+</select>
+
+<select id="toCurrency" >
+  <option value="EUR">EUR</option>
+  <option value="USD">USD</option>
+  <option value="UAH">UAH</option>
+  <option value="JPY">JPY</option>
+</select>
+
+<button onclick="convertCurrency()">Convert</button>
+
+<p id="result">Converted amount: </p>
+
+<script src="currency_converter.js"></script>
+</body>
+</html>
