@@ -8,13 +8,20 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <!--Website Header-->
+    <div class="weather-header"><h2>happy weather daily˚ʚ♡ɞ˚</h2></div>
+    
+    <!--Main Weather Information-->
     <div class="content">
-    <h1>Weather Today</h1>
-    <h2>Ukraine</h2>
-    <h3>Kyiv, Hostomel </h3>
+    <h2>🌻Hostomel, Kyiv Oblast, Ukraine</h2>
+    <p>Current temperature</p>
+
+    <!-- Display the current temperature fetched from the API -->
     <p id="current-temp">temperature</p>
+
+    <!-- Button to display hourly temperature info -->
     <button id="display-temp-btn" onClick="displayTemp();">Hourly Temperature</button>
-    <p id="hourly-temp">Hourly Temperature: <br></p>
+    <p id="hourly-temp"><span class="temp-style-header">TODAY'S HOURLY TEMPERATURE </span><br></p>
     </div>
 </body>
 </html>
