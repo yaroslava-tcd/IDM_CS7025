@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>LAB 05</title>
+<link rel="stylesheet" href="style.css">
+<script src="script.js"></script>
+</head>
+<body>
+<h1>Game Music Library</h1>
+<label for="genre">Choose a ganre:</label>
+<select id="genre" onchange="showMusic()">
+<option>All genres</option>
+<option>JRPG</option>
+<option>Horror</option>
+<option>RPG</option>
+</select>
+
+<div id="music-list"></div>
+<button onclick="generatePlaylist()">
+    Generate Random Playlist
+</button>
+
+
+</body>
+</html>
