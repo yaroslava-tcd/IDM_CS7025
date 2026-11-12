@@ -29,3 +29,35 @@ return theCookie.substring(name.length, theCookie.length);
 return "";
 }
 console.log(getCookie('visitor_data'));
+
+//count buttons
+let count = 0;
+let btn = document.getElementById("collector-btn");
+let disp = document.getElementById("numb-display");
+
+btn.addEventListener("click", function() {
+    count++;
+    disp.innerHTML = count;
+});
+
+//window.localStorage.setItem('function()', JSON.stringify(function()));
+//JSON.parse(window.localStorage.getItem('function()'));
+
+
+
+
+// document.cookie = 
+//     "courseName=webDeveopment bootcamp; expires = Thu, 5 March 2030 12:00:00 UTC; path = /"
+
+// function getCookie(cookieName) {
+//     const cookies = document.cookie.split('; ');
+//     for (const cookie of cookies) {
+//         const [name, value] = cookie.split('=');
+//         if (name === cookieName) {
+//             return decodeURIComponent(value);
+//         }
+//     }
+//     return null;
+// }
+// const courseName = getCookie('courseName');
+// console.log('Course Name:', courseName);
