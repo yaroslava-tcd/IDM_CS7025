@@ -112,7 +112,7 @@ function randomPlaylist() {
     //Going through the GameMusicLibrary to get all songs
     for (let i = 0; i < GameMusicLibrary.length; i++) {
 
-        //Go through every artist
+        //Go through every game
         for (let j = 0; j < GameMusicLibrary[i].games.length; j++) {
 
             //Go through every song
@@ -149,8 +149,6 @@ function randomPlaylist() {
             </div>
         `;
 
-        //Remove song so it cannot appear again
-        allSongs.splice(randomIndex, 1);
     }
 }
 

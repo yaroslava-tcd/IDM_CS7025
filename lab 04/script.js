@@ -10,28 +10,28 @@ fetch(weatherURL)
 .then(data => {
     
 // Function to identify weather conditions based on the weather code and whether it's day or night and add the corresponding icon and description
-function describeWeather(code, isDay) {
-    const day = isDay !== 0;
+function describeWeather(weather_code, is_day) {
+    const day = is_day !== 0;
 
-    if (code === 0) {
+    if (weather_code === 0) {
         return [day ? "☀️" : "🌙", "Clear sky"];
-    } else if (code === 1) {
+    } else if (weather_code === 1) {
         return [day ? "🌤️" : "🌙", "Mainly clear"];
-    } else if (code === 2) {
+    } else if (weather_code === 2) {
         return ["⛅", "Partly cloudy"];
-    } else if (code === 3) {
+    } else if (weather_code === 3) {
         return ["☁️", "Overcast"];
-    } else if (code === 45 || code === 48) {
+    } else if (weather_code === 45 || weather_code === 48) {
         return ["🌫️", "Fog"];
-    } else if (code >= 51 && code <= 67) {
+    } else if (weather_code >= 51 && weather_code <= 67) {
         return ["🌧️", "Drizzle or rain"];
-    } else if (code >= 71 && code <= 77) {
+    } else if (weather_code >= 71 && weather_code <= 77) {
         return ["❄️", "Snow"];
-    } else if (code >= 80 && code <= 82) {
+    } else if (weather_code >= 80 && weather_code <= 82) {
         return ["🌦️", "Rain showers"];
-    } else if (code >= 85 && code <= 86) {
+    } else if (weather_code >= 85 && weather_code <= 86) {
         return ["🌨️", "Snow showers"];
-    } else if (code >= 95) {
+    } else if (weather_code >= 95) {
         return ["⛈️", "Thunderstorm"];
     } else {
         return ["🌡️", "Unknown weather"];
@@ -41,17 +41,23 @@ function describeWeather(code, isDay) {
 
     //Hourly Temperature info
     for (let i = 0; i < data.hourly.temperature_2m.length; i++) {
-  const [icon, text] = describeWeather(
+        const [icon, text] = describeWeather(
         data.hourly.weather_code[i],
         data.hourly.is_day[i]
     );
-        document.getElementById("hourly-temp").innerHTML += 
+
+    document.getElementById("hourly-temp").innerHTML += 
         '<span class="temp-style-time">' + data.hourly.time[i].slice(11, 16) + "  " + '</span>' +
         '<span class="temp-style">' + icon + '</span>' +
         '<span class="temp-style">' + Math.round(data.hourly.temperature_2m[i]) + '</span>' +
         '<span class="temp-style">' + data.hourly_units.temperature_2m + '</span>' + " " + 
         '<span class="temp-style-txt">' + text + '</span>' + "<br>";
     }
+    
+    // function getDate(){
+    //     const date = new Date();
+    //     return date.now().toLos
+    // }
 
 
     //Current Temperature info
@@ -83,4 +89,5 @@ function displayTemp() {
         tempText.style.display = "none";
     }
 }
+//class attribute change
   
